@@ -1,56 +1,21 @@
 ---
 import Layout from "../../layouts/layout.astro";
 
-const journeyItems = [
-  {
+const testJourneyItem = {
     date: "2023 - Present",
     title: "This is Still a Work in Progress",
     paragraphs: [
       "I'm currently working on this and I'm excited to share with you soon.",
       "In the meantime, check out my other projects on GitHub.",
     ],
-  },
-  {
-    date: "2023 - Present",
-    title: "This is Still a Work in Progress",
-    paragraphs: [
-      "I'm currently working on this and I'm excited to share with you soon.",
-      "In the meantime, check out my other projects on GitHub.",
-    ],
-  },
-  {
-    date: "2023 - Present",
-    title: "This is Still a Work in Progress",
-    paragraphs: [
-      "I'm currently working on this and I'm excited to share with you soon.",
-      "In the meantime, check out my other projects on GitHub.",
-    ],
-  },
-  {
-    date: "2023 - Present",
-    title: "This is Still a Work in Progress",
-    paragraphs: [
-      "I'm currently working on this and I'm excited to share with you soon.",
-      "In the meantime, check out my other projects on GitHub.",
-    ],
-  },
-  {
-    date: "2023 - Present",
-    title: "This is Still a Work in Progress",
-    paragraphs: [
-      "I'm currently working on this and I'm excited to share with you soon.",
-      "In the meantime, check out my other projects on GitHub.",
-    ],
-  },
-  {
-    date: "2023 - Present",
-    title: "This is Still a Work in Progress",
-    paragraphs: [
-      "I'm currently working on this and I'm excited to share with you soon.",
-      "In the meantime, check out my other projects on GitHub.",
-    ],
-  },
-];
+  };
+
+const journeyItems = [];
+
+for (let i = 0; i < 50; i++) {
+  journeyItems.push(testJourneyItem);
+}
+
 ---
 
 <Layout>

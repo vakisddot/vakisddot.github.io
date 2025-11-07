@@ -20,8 +20,12 @@ import Header from "../components/header.astro";
 		<Header />
 
         <div class="parallax-container">
-			<div id="parallax-bg"></div>
+			<div class="parallax-bg parallax-layer-1" />
+			<div class="parallax-bg parallax-layer-2" />
+			<div class="parallax-bg parallax-layer-3" />
+			<div class="parallax-bg parallax-layer-4" />
 			<slot />
+			<div class="parallax-bg parallax-footer" />
         </div>
 	</body>
 </html>
