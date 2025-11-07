@@ -2,14 +2,17 @@ html,
 body,
 :root {
     font-family: "JetBrains Mono", sans-serif;
-    color: var(--color-slate-100);
-    background-color: var(--color-slate-950);
+    color: var(--color-gray-50);
     width: 100%;
     min-height: 100vh;
 }
 
+body {
+    background-color: var(--color-gray-700);
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
 }
@@ -22,5 +25,5 @@ h2 {
 a:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: var(--color-yellow-500);
+    color: var(--color-orange-500);
 }
