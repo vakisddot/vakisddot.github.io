@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import "../styles/tailwind.css";
+import "../styles/parallax.css";
 import Header from "../components/header.astro";
-import Background from "../components/background.astro";
 ---
 
 <html lang="en">
@@ -17,8 +17,11 @@ import Background from "../components/background.astro";
 		<title>Ivaylo</title>
 	</head>
 	<body>
-        <Header />
-		<slot />
-		<Background />
+		<Header />
+
+        <div class="parallax-container">
+			<div id="parallax-bg"></div>
+			<slot />
+        </div>
 	</body>
 </html>

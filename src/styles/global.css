@@ -1,14 +1,12 @@
-html,
-body,
-:root {
+body {
+    background-color: var(--color-gray-700);
     font-family: "JetBrains Mono", sans-serif;
     color: var(--color-gray-50);
     width: 100%;
-    min-height: 100vh;
-}
-
-body {
-    background-color: var(--color-gray-700);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 h1 {
@@ -25,5 +23,6 @@ h2 {
 a:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: var(--color-orange-500);
+    color: var(--color-orange-400);
+    transition: all 0.1s ease-in;
 }

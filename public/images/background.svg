@@ -1,4 +1,3 @@
-<div id="parallax-bg" class="absolute inset-0 -z-10 overflow-hidden">
 <svg class="w-screen min-h-fit" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="560" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 560">
     <g mask="url(&quot;#SvgjsMask1120&quot;)" fill="none">
         <rect width="1440" height="520" x="0" y="0" fill="rgba(3, 7, 18, 1)"></rect>
@@ -13,21 +12,3 @@
         </mask>
     </defs>
 </svg>
-</div>
-<script>
-const parallaxBg = document.getElementById('parallax-bg');
-
-const scrollSpeed = 0.5;
-
-if (!parallaxBg) {
-    throw new Error('Parallax background not found');
-}
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    
-    const translateValue = scrollY * scrollSpeed;
-
-    parallaxBg.style.transform = `translateY(${translateValue}px)`;
-});
-</script>

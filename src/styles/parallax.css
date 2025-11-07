@@ -1,0 +1,23 @@
+.parallax-container {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#parallax-bg {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform-style: preserve-3d;
+    background-image: url("/images/background.svg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transform: translateZ(-2px) scale(3.2);
+}
