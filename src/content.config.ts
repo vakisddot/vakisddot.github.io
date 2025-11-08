@@ -2,7 +2,7 @@ import { defineCollection, z } from "astro:content";
 
 import { glob, file } from "astro/loaders";
 
-const journeyCollection = defineCollection({
+const journey = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/journey" }),
     schema: z.object({
         sortOrder: z.number(),
@@ -17,4 +17,6 @@ const journeyCollection = defineCollection({
     }),
 });
 
-export const collections = { journey: journeyCollection };
+export const collections = {
+    journey,
+};
