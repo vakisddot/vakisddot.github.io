@@ -14,7 +14,7 @@ content:
   - name: socials
     label: Socials
     type: file
-    path: src/content/socials
+    path: src/content/socials.json
     fields:
       - { name: email, label: Email, type: string }
       - { name: github, label: GitHub, type: string }
