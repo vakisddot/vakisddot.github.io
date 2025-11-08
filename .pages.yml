@@ -11,3 +11,13 @@ content:
       - { name: date, label: Date, type: string }
       - { name: title, label: Title, type: string }
       - { name: body, label: Body, type: rich-text }
+  - name: socials
+    label: Socials
+    type: file
+    path: src/content/socials
+    fields:
+      - { name: email, label: Email, type: string }
+      - { name: github, label: GitHub, type: string }
+      - { name: instagram, label: Instagram, type: string }
+      - { name: youtube, label: YouTube, type: string }
+      - { name: tiktok, label: TikTok, type: string }
