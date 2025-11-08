@@ -1,4 +1,6 @@
 ---
+import "../styles/flip-card.css";
+
 import Layout from "../layouts/layout.astro";
 import socials from "../content/socials.json";
 
@@ -10,9 +12,9 @@ const emailFull = "mailto:" + socials.email;
 	<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-8 max-w-2xl mx-auto">
 	<section id="hero" class="flex flex-col items-center gap-8">
 		<a href="/logos">
-		<section id="logos" class="flex gap-8 items-center p-4">
-			<img src="/images/logo_interactive.png" width="64" alt="Logo" />
-			<img src="/images/logo_base.png" width="128" alt="Logo" />
+		<section id="logos" class="card flex gap-8 items-center p-10 m-8">
+			<img class="card-back" src="/images/logo_interactive.png" alt="Logo" />
+			<img class="card-front scale-150" src="/images/logo_base.png" alt="Logo" />
 		</section>
 		</a>
 
@@ -55,5 +57,4 @@ const emailFull = "mailto:" + socials.email;
 		<p><span class="highlight">&copy; {currYear} Vakis Interactive.</span> All rights reserved.</p>
 	</footer>
 	</main>
-	
 </Layout>
