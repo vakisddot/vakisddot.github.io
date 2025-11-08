@@ -10,6 +10,12 @@ body {
 }
 
 h1 {
+    padding-inline: 1rem;
+    background-color: color-mix(
+        in oklab,
+        var(--color-gray-950) 50%,
+        transparent
+    );
     font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
@@ -25,4 +31,13 @@ a:hover {
     cursor: pointer;
     color: var(--color-orange-400);
     transition: all 0.1s ease-in;
+}
+
+i {
+    color: var(--color-orange-300);
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
 }

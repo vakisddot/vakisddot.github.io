@@ -12,24 +12,25 @@ const testJourneyItem = {
 
 const journeyItems = [];
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 10; i++) {
   journeyItems.push(testJourneyItem);
 }
 
 ---
 
 <Layout>
-  <main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-8 max-w-md mx-auto">
+  <main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-4 max-w-xl mx-auto">
     
-    <h1 class="text-4xl font-bold">A Journey Through Time...</h1>
+    <h1><i class="ph ph-sun-horizon"></i> A Journey Through Time...</h1>
 
-    <ol class="relative border-s border-orange-200">
+    <div id="container" class="bg-gray-950/75 p-4">
+      <ol class="relative border-l border-gray-50">
       
       {journeyItems.map((item, index) => (
-        <li class="flex flex-col items-start mb-10 ml-6 gap-2">
-            <div class="absolute w-2 h-2 bg-orange-400 rounded-full mt-1 -start-1"></div>
+        <li class="flex flex-col items-start mb-10 gap-2 ml-8 pr-8 py-4 border-dashed border-t border-orange-200">
+            <div class="absolute w-2 h-2 bg-orange-300 rounded-full mt-1 -start-1"></div>
           
-            <time class="mb-1 text-sm font-normal leading-none text-orange-100">
+            <time class="mb-1 text-sm font-normal leading-none text-orange-200">
                 {item.date}
             </time>
             
@@ -58,5 +59,7 @@ for (let i = 0; i < 50; i++) {
       ))}
 
     </ol>
+    </div>
+    
   </main>
 </Layout>
