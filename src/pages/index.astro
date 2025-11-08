@@ -3,7 +3,7 @@ import Layout from "../layouts/layout.astro";
 import socials from "../content/socials.json";
 
 const currYear = new Date().getFullYear();
-const emailStripped = socials.email.replace("mailto:", "");
+const emailFull = "mailto:" + socials.email;
 ---
 
 <Layout>
@@ -42,11 +42,11 @@ const emailStripped = socials.email.replace("mailto:", "");
 	<section id="contact" class="flex flex-col items-center gap-8">
 		<h1 class="highlight"><i class="ph ph-at"></i> Contact</h1>
 		<ul class="flex flex-col gap-2 items-center px-8 border-orange-300 border-dashed border-x-2 rounded-t-2xl">
-			<li class="highlight"><a href={socials?.email}><i class="ph ph-envelope"></i> {emailStripped}</a></li>
-			<li class="highlight"><a href={socials?.github}><i class="ph ph-github-logo"></i> GitHub</a></li>
-			<li class="highlight"><a href={socials?.instagram}><i class="ph ph-instagram-logo"></i> Instagram</a></li>
-			<li class="highlight"><a href={socials?.youtube}><i class="ph ph-youtube-logo"></i> YouTube</a></li>
-			<li class="highlight"><a href={socials?.tiktok}><i class="ph ph-tiktok-logo"></i> TikTok</a></li>
+			<li class="highlight"><a href={emailFull}><i class="ph ph-envelope"></i> {socials.email}</a></li>
+			<li class="highlight"><a href={socials.github}><i class="ph ph-github-logo"></i> GitHub</a></li>
+			<li class="highlight"><a href={socials.instagram}><i class="ph ph-instagram-logo"></i> Instagram</a></li>
+			<li class="highlight"><a href={socials.youtube}><i class="ph ph-youtube-logo"></i> YouTube</a></li>
+			<li class="highlight"><a href={socials.tiktok}><i class="ph ph-tiktok-logo"></i> TikTok</a></li>
 		</ul>
 	</section>
 
