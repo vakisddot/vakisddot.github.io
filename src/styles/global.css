@@ -1,5 +1,9 @@
+html,
 body {
-    background-color: var(--color-gray-700);
+    background-color: var(--color-background);
+}
+
+body {
     font-family: "JetBrains Mono", sans-serif;
     color: var(--color-gray-50);
     width: 100%;
@@ -40,4 +44,21 @@ i {
 img {
     pointer-events: none;
     user-select: none;
+}
+
+.btn {
+    cursor: pointer;
+    color: var(--color-gray-50);
+    background-color: var(--color-gray-800);
+    border: 1px solid var(--color-gray-600);
+    padding: 0.5rem 1rem;
+    transition: all 0.1s ease-in;
+}
+
+.btn i {
+    color: var(--color-gray-300);
+}
+
+.btn:hover i {
+    color: var(--color-orange-400);
 }

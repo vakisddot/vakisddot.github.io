@@ -42,7 +42,7 @@
 }
 
 .parallax-footer {
-    background-color: #171628;
+    background-color: var(--color-background);
     transform: translateY(220vh) translateZ(-1px) scale(2.2);
 }
 
