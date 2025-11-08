@@ -7,4 +7,4 @@ title: Test from Pages CMS
 
 # Amazing!
 
-![](/public/images/money-donald-duck.gif)
+![](/public/images/logo_base.png)
