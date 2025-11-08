@@ -17,4 +17,4 @@ const journeyCollection = defineCollection({
     }),
 });
 
-export const collections = { journeyCollection };
+export const collections = { journey: journeyCollection };

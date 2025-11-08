@@ -14,12 +14,6 @@ body {
 }
 
 h1 {
-    padding-inline: 1rem;
-    background-color: color-mix(
-        in oklab,
-        var(--color-gray-950) 50%,
-        transparent
-    );
     font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
@@ -61,4 +55,13 @@ img {
 
 .btn:hover i {
     color: var(--color-orange-400);
+}
+
+.highlight {
+    padding-inline: 1rem;
+    background-color: color-mix(
+        in oklab,
+        var(--color-gray-950) 50%,
+        transparent
+    );
 }

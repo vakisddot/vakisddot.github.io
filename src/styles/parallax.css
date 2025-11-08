@@ -28,7 +28,7 @@
 
 .parallax-layer-2 {
     background-image: url("/images/bg/2.png");
-    transform: translateX(-150%) translateZ(-10px) scale(11.2);
+    transform: translateX(-200%) translateZ(-10px) scale(11.2);
 }
 
 .parallax-layer-3 {
