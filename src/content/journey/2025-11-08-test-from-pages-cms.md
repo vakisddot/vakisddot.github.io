@@ -7,4 +7,4 @@ title: Test from Pages CMS
 
 # Amazing!
 
-![](/public/images/logo_base.png)
+![](/images/logo_base.png)
