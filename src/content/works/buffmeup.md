@@ -1,7 +1,7 @@
 ---
 title: "BuffMeUp"
 slug: "buffmeup"
-description: "A Terraria mod that adds gifs in game chat"
+description: "A demo full-stack application for calorie & workout tracking"
 thumbnail: "/images/works/gifs-in-chat/thumb.png"
 github: "https://github.com/vakisddot/BuffMeUp"
 sortOrder: 6

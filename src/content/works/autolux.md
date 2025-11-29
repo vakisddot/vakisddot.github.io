@@ -1,7 +1,7 @@
 ---
 title: "Autolux.bg"
 slug: "autolux"
-description: "A Terraria mod that adds gifs in game chat"
+description: "A demo site for a luxury car dealership"
 thumbnail: "/images/works/autolux/thumb.png"
 github: "https://github.com/vakisddot/AutoLux"
 sortOrder: 5
