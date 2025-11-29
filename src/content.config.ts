@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-
 import { glob, file } from "astro/loaders";
 
 const works = defineCollection({
@@ -10,6 +9,7 @@ const works = defineCollection({
         slug: z.string(),
         description: z.string(),
         thumbnail: z.string(),
+        images: z.array(z.string()).optional(),
         icon: z.string().optional(),
         url: z.string().url().optional(),
         github: z.string().url().optional(),

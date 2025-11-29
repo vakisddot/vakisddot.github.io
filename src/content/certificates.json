@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Back-End Software Engineer",
+        "issuer": "SoftUni",
+        "url": "https://softuni.bg/certificates/details/243784/d0b60d65",
+        "year": 2025,
+        "image": "/images/certificates/softuni.jpeg"
+    },
+    {
+        "title": "Completed Harvard's CS50 Course",
+        "issuer": "Harvard University",
+        "url": "https://certificates.cs50.io/bf551a94-0a52-4b78-b5c1-ce45a25f279c.png?size=letter",
+        "year": 2021,
+        "image": "/images/certificates/cs50x.png"
+    }
+]
