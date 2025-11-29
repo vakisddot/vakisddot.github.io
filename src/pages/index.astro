@@ -1,15 +1,20 @@
 ---
 import "../styles/flip-card.css";
-
-import Layout from "../layouts/layout.astro";
+import { getCollection } from 'astro:content';
 import socials from "../content/socials.json";
+import Layout from "../layouts/BaseLayout.astro";
+import WorkEntry from "../components/WorkEntry.astro";
 
 const currYear = new Date().getFullYear();
 const emailFull = "mailto:" + socials.email;
+
+let works = await getCollection("works");
+works = works.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+console.log(works);
 ---
 
 <Layout>
-	<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-8 max-w-2xl mx-auto">
+<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-8 max-w-5xl mx-auto">
 	<section id="hero" class="flex flex-col items-center gap-8">
 		<a href="/logos">
 		<section id="logos" class="card flex gap-8 items-center p-10 m-8">
@@ -26,13 +31,13 @@ const emailFull = "mailto:" + socials.email;
 		
 	</section>
 
-	<section id="projects" class="flex flex-col items-center gap-8">
+	<section id="projects" class="flex flex-col items-center gap-8 w-full">
 		<h1 class="highlight"><i class="ph ph-highlighter"></i> Works</h1>
-		<ul class="flex flex-col gap-2 items-center px-8 border-orange-300 border-dashed border-x-2 rounded-t-2xl">
-			<li><a href="https://operation-reboot.onrender.com/">Operation: Reboot</a></li>
-			<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2960675504">GIFs in Chat</a></li>
-			<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2858293378">World Country Flags</a></li>
-			<li><a href="#">Space Shooter</a></li>
+
+		<ul class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full px-8">
+			{works.map(({ data }) => (
+				<WorkEntry entry={data} />
+			))}
 		</ul>
 
 		<a href="/works" class="btn"
@@ -56,5 +61,5 @@ const emailFull = "mailto:" + socials.email;
 		<p>Credits for the background go to <a class="highlight text-orange-300" href="https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set">@CraftPix</a></p>
 		<p><span class="highlight">&copy; {currYear} Vakis Interactive.</span> All rights reserved.</p>
 	</footer>
-	</main>
+</main>
 </Layout>

@@ -2,7 +2,14 @@
 import "../styles/tailwind.css";
 import "../styles/global.css";
 import "../styles/parallax.css";
-import Header from "../components/header.astro";
+import Header from "../components/Header.astro";
+
+const { 
+    title, 
+    description = "Websites, software, music, art, videos and digital media created by Vakïs Interactive.", 
+} = Astro.props;
+
+const pageTitle = title ? `${title} | Vakïs Interactive` : "Vakïs Interactive | Software & Digital Media";
 ---
 
 <html lang="en">
@@ -24,18 +31,20 @@ import Header from "../components/header.astro";
 			type="text/css"
 			href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
 		/>
-		<title>Vakïs Interactive</title>
+		<title>{pageTitle}</title>
+        <meta name="title" content={pageTitle} />
+        <meta name="description" content={description} />
+		<meta property="og:type" content="website" />
 	</head>
 	<body>
 		<Header />
 
         <div class="parallax-container">
-			<div class="parallax-bg parallax-layer-1" />
-			<div class="parallax-bg parallax-layer-2" />
-			<div class="parallax-bg parallax-layer-3" />
-			<div class="parallax-bg parallax-layer-4" />
+			<div class="parallax-layer parallax-layer-1" />
+			<div class="parallax-layer parallax-layer-2" />
+			<div class="parallax-layer parallax-layer-3" />
+			<div class="parallax-layer parallax-layer-4" />
 			<slot />
-			<div class="parallax-bg parallax-footer" />
         </div>
 	</body>
 </html>

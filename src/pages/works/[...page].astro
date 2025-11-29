@@ -1,0 +1,53 @@
+---
+import WorkEntry from "../../components/WorkEntry.astro";
+import Layout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }: any) {
+  let works = await getCollection("works");
+  
+  works = works.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+  return paginate(works, { pageSize: 6 });
+}
+
+const { page }: any = Astro.props;
+---
+<Layout title={`Works - Page ${page.currentPage}`}>
+<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-16 mx-auto">
+    <section class="flex flex-col items-center gap-4 text-center">
+        <h1 class="highlight"><i class="ph ph-briefcase"></i> All Works</h1>
+        <p class="opacity-80">Page {page.currentPage} of {page.lastPage}</p>
+    </section>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full">
+        {page.data.map(({ data }: any) => (
+            <WorkEntry entry={data} />
+        ))}
+    </ul>
+
+    <div class="flex justify-between items-center w-full max-w-xs border-t-2 border-orange-300/30 pt-8">
+        {page.url.prev ? (
+            <a href={page.url.prev} class="btn flex items-center gap-2 hover:text-orange-300">
+                <i class="ph ph-arrow-left"></i> Previous
+            </a>
+            ) : (
+            <span class="opacity-30 cursor-not-allowed flex items-center gap-2">
+                <i class="ph ph-arrow-left"></i> Previous
+            </span>
+        )}
+
+        <span class="font-bold text-lg">{page.currentPage}</span>
+
+        {page.url.next ? (
+            <a href={page.url.next} class="btn flex items-center gap-2 hover:text-orange-300">
+                Next <i class="ph ph-arrow-right"></i>
+            </a>
+            ) : (
+            <span class="opacity-30 cursor-not-allowed flex items-center gap-2">
+                Next <i class="ph ph-arrow-right"></i>
+            </span>
+        )}
+    </div>
+</main>
+</Layout>
