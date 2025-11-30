@@ -16,9 +16,70 @@ const { Content } = await render(entry);
 
 <Layout title={`${entry.data.title} - Works`}>
 <main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-16 mx-auto">
-    <section class="flex flex-col items-center gap-4 text-center max-w-3xl">
-        <h1 class="highlight">{entry.data.title}</h1>
-        <p class="opacity-80">{entry.data.description}</p>
+    <section class="flex flex-col items-center gap-6 text-center max-w-3xl">
+        {entry.data.icon && (
+            <img src={entry.data.icon} alt="" class="w-16 h-16 object-contain mb-2" />
+        )}
+
+        <h1 class="highlight text-4xl font-bold">{entry.data.title}</h1>
+        <p class="opacity-80 text-lg leading-relaxed">{entry.data.description}</p>
+
+        {(entry.data.url || entry.data.github) && (
+            <div class="flex gap-4 mt-2">
+                {entry.data.url && (
+                    <a 
+                        href={entry.data.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn-alt"
+                    >
+                        <i class="ph ph-globe"></i>
+                        Visit Website
+                    </a>
+                )}
+                {entry.data.github && (
+                    <a 
+                        href={entry.data.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn-alt"
+                    >
+                        <i class="ph ph-github-logo"></i>
+                        GitHub Repo
+                    </a>
+                )}
+            </div>
+        )}
     </section>
+
+    <section class="w-full rounded-xl overflow-hidden shadow-2xl max-w-3xl mx-auto">
+        <img 
+            src={entry.data.thumbnail} 
+            alt={`Cover for ${entry.data.title}`} 
+            class="w-full h-auto object-cover"
+        />
+    </section>
+
+    <article class="max-w-3xl w-full">
+        <Content />
+    </article>
+
+    {entry.data.images && entry.data.images.length > 0 && (
+        <section class="w-full pt-12 max-w-5xl mx-auto px-4 sm:px-8">
+            <h3 class="highlight text-2xl font-bold mb-8 text-center">Gallery</h3>
+            
+            <div class="columns-1 md:columns-2 gap-0 rounded-xl overflow-hidden">
+                {entry.data.images.map((img) => (
+                    <img 
+                        src={img} 
+                        alt={`Screenshot of ${entry.data.title}`}
+                        class="w-full block p-2" 
+                    />
+                ))}
+            </div>
+        </section>
+    )}
+
+    <a href="/works" class="btn"><i class="ph ph-arrow-left"></i> Go back</a>
 </main>
 </Layout>

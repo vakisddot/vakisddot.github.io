@@ -3,3 +3,7 @@
 @theme {
     --color-background: #171628;
 }
+
+.btn-alt {
+    @apply px-6 py-2 border border-current rounded-full font-medium hover:bg-white/10 transition-colors;
+}
