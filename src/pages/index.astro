@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import socials from "../content/socials.json";
 import Layout from "../layouts/BaseLayout.astro";
 import WorkEntry from "../components/WorkEntry.astro";
+import ContactFormButton from "../components/ContactFormButton";
 
 const currYear = new Date().getFullYear();
 const emailFull = "mailto:" + socials.email;
@@ -56,6 +57,11 @@ const works = (await getCollection("works"))
 			<li class="highlight"><a href={socials.youtube}><i class="ph ph-youtube-logo"></i> YouTube</a></li>
 			<li class="highlight"><a href={socials.tiktok}><i class="ph ph-tiktok-logo"></i> TikTok</a></li>
 		</ul>
+
+		<ContactFormButton 
+			client:load 
+			className="btn" 
+		/>
 	</section>
 
 	<footer class="flex flex-col items-center text-center gap-4">

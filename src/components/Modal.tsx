@@ -20,7 +20,7 @@ export default function Modal() {
                 <i className="ph ph-x"></i>
             </button>
 
-            <div className="relative w-auto h-auto max-w-full max-h-full flex items-center justify-center">
+            <div className="relative w-full h-auto max-w-full max-h-full flex items-center justify-center">
                 {$content}
             </div>
         </div>

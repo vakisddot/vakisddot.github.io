@@ -31,11 +31,16 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
 
     const handleOpenModal = () => {
         openModal(
-            <img
-                src={images[currentIndex]}
-                alt={altText ?? `Gallery Image ${currentIndex + 1}`}
-                className="w-auto h-auto max-h-[90vh] max-w-[90vw] object-contain rounded-md shadow-2xl"
-            />
+            <div
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center justify-center"
+            >
+                <img
+                    src={images[currentIndex]}
+                    alt={altText ?? `Gallery Image ${currentIndex + 1}`}
+                    className="w-auto h-auto max-h-[90vh] max-w-[90vw] object-contain rounded-md shadow-2xl"
+                />
+            </div>
         );
     };
 
