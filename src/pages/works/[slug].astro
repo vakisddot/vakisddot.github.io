@@ -25,7 +25,7 @@ const { Content } = await render(entry);
         <p class="opacity-80 text-lg leading-relaxed">{entry.data.description}</p>
 
         {(entry.data.url || entry.data.github) && (
-            <div class="flex gap-4 mt-2">
+            <div class="flex flex-col md:flex-row gap-4 mt-2">
                 {entry.data.url && (
                     <a 
                         href={entry.data.url} 

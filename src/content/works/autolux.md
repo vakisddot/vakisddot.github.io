@@ -7,5 +7,6 @@ images: ["/images/works/autolux/1.png"]
 url: "https://autoluxbg.onrender.com/"
 github: "https://github.com/vakisddot/AutoLux"
 sortOrder: 5
+featured: true
 ---
 You can write extra details here if you ever make a dedicated page for this project!

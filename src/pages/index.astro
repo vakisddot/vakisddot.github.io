@@ -8,9 +8,10 @@ import WorkEntry from "../components/WorkEntry.astro";
 const currYear = new Date().getFullYear();
 const emailFull = "mailto:" + socials.email;
 
-let works = await getCollection("works");
-works = works.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
-console.log(works);
+const works = (await getCollection("works"))
+	.filter(work => work.data.featured)
+	.sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+	.slice(0, 4);
 ---
 
 <Layout>
