@@ -3,6 +3,7 @@ import "../styles/tailwind.css";
 import "../styles/global.css";
 import "../styles/parallax.css";
 import Header from "../components/Header.astro";
+import Modal from "../components/Modal";
 
 const { 
     title, 
@@ -46,5 +47,7 @@ const pageTitle = title ? `${title} | Vakïs Interactive` : "Vakïs Interactive 
 			<div class="parallax-layer parallax-layer-4" />
 			<slot />
         </div>
+
+		<Modal client:load />
 	</body>
 </html>

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/BaseLayout.astro';
+import ImageGallery from '../../components/ImageGallery';
 
 export async function getStaticPaths() {
     const works = await getCollection("works");
@@ -52,33 +53,11 @@ const { Content } = await render(entry);
         )}
     </section>
 
-    <section class="w-full rounded-xl overflow-hidden shadow-2xl max-w-3xl mx-auto">
-        <img 
-            src={entry.data.thumbnail} 
-            alt={`Cover for ${entry.data.title}`} 
-            class="w-full h-auto object-cover"
-        />
-    </section>
+    <ImageGallery images={[entry.data.thumbnail, ...entry.data.images ?? []]} altText={entry.data.title} client:load />
 
     <article class="max-w-3xl w-full">
         <Content />
     </article>
-
-    {entry.data.images && entry.data.images.length > 0 && (
-        <section class="w-full flex flex-col items-center pt-12 max-w-5xl mx-auto px-4 sm:px-8">
-            <h3 class="highlight text-2xl font-bold mb-8 text-center">Gallery</h3>
-            
-            <div class="columns-1 md:columns-2 gap-0 rounded-xl overflow-hidden">
-                {entry.data.images.map((img) => (
-                    <img 
-                        src={img} 
-                        alt={`Screenshot of ${entry.data.title}`}
-                        class="w-full block p-2" 
-                    />
-                ))}
-            </div>
-        </section>
-    )}
 
     <a href="/works" class="btn"><i class="ph ph-arrow-left"></i> Go back</a>
 </main>

@@ -8,6 +8,10 @@
     @apply px-6 py-2 border border-current rounded-full font-medium hover:bg-white/10 transition-colors;
 }
 
+.btn-round {
+    @apply w-10 h-10 scale-125 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-sm hover:bg-white/20 transition-all text-xl cursor-pointer;
+}
+
 .page-container {
     @apply w-full flex flex-col items-center gap-16 mt-24 mb-12 px-8 max-w-5xl mx-auto;
 }
