@@ -2,6 +2,48 @@ media:
   input: public
   output: /
 content:
+  - name: works
+    label: Works
+    path: src/content/works
+    type: collection
+    format: yaml-frontmatter
+    fields:
+    - name: sortOrder
+      label: Sort Order
+      type: number
+      required: true
+    - name: title
+      label: Title
+      type: string
+      required: true
+    - name: slug
+      label: Slug
+      type: string
+      required: true
+    - name: description
+      label: Description
+      type: string
+      required: true
+    - name: thumbnail
+      label: Thumbnail
+      type: string
+      required: true
+    - name: images
+      label: Images
+      type: string
+      list: true
+    - name: icon
+      label: Icon
+      type: string
+    - name: url
+      label: Url
+      type: string
+    - name: github
+      label: Github
+      type: string
+    - name: featured
+      label: Featured
+      type: boolean
   - name: journey
     label: Journey
     type: collection

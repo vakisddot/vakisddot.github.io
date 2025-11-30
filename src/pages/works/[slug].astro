@@ -15,7 +15,7 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={`${entry.data.title} - Works`}>
-<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-16 mx-auto">
+<main class="page-container">
     <section class="flex flex-col items-center gap-6 text-center max-w-3xl">
         {entry.data.icon && (
             <img src={entry.data.icon} alt="" class="w-16 h-16 object-contain mb-2" />
@@ -65,7 +65,7 @@ const { Content } = await render(entry);
     </article>
 
     {entry.data.images && entry.data.images.length > 0 && (
-        <section class="w-full pt-12 max-w-5xl mx-auto px-4 sm:px-8">
+        <section class="w-full flex flex-col items-center pt-12 max-w-5xl mx-auto px-4 sm:px-8">
             <h3 class="highlight text-2xl font-bold mb-8 text-center">Gallery</h3>
             
             <div class="columns-1 md:columns-2 gap-0 rounded-xl overflow-hidden">

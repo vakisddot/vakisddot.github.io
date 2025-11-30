@@ -14,7 +14,7 @@ export async function getStaticPaths({ paginate }: any) {
 const { page }: any = Astro.props;
 ---
 <Layout title={`Works - Page ${page.currentPage}`}>
-<main class="w-full flex flex-col items-center gap-16 mt-24 mb-12 px-16 mx-auto">
+<main class="page-container">
     <section class="flex flex-col items-center gap-4 text-center">
         <h1 class="highlight"><i class="ph ph-briefcase"></i> All Works</h1>
         <p class="opacity-80">Page {page.currentPage} of {page.lastPage}</p>
