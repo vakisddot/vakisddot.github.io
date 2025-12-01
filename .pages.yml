@@ -6,48 +6,24 @@ content:
     label: Works
     path: src/content/works
     type: collection
-    format: yaml-frontmatter
+    sort: sortOrder
     fields:
-    - name: sortOrder
-      label: Sort Order
-      type: number
-      required: true
-    - name: title
-      label: Title
-      type: string
-      required: true
-    - name: slug
-      label: Slug
-      type: string
-      required: true
-    - name: description
-      label: Description
-      type: string
-      required: true
-    - name: thumbnail
-      label: Thumbnail
-      type: string
-      required: true
-    - name: images
-      label: Images
-      type: string
-      list: true
-    - name: icon
-      label: Icon
-      type: string
-    - name: url
-      label: Url
-      type: string
-    - name: github
-      label: Github
-      type: string
-    - name: featured
-      label: Featured
-      type: boolean
+    - { name: sortOrder, label: Sort Order, type: number, required: true }
+    - { name: title, label: Title, type: string, required: true }
+    - { name: slug, label: Slug, type: string, required: true }
+    - { name: description, label: Description, type: string, required: true }
+    - { name: thumbnail, label: Thumbnail, type: string, required: true }
+    - { name: images, label: Images, type: string, list: true }
+    - { name: icon, label: Icon, type: string }
+    - { name: url, label: Url, type: string }
+    - { name: github, label: Github, type: string }
+    - { name: featured, label: Featured, type: boolean }
+    - { name: body, label: Body, type: rich-text }
   - name: journey
     label: Journey
     type: collection
     path: src/content/journey
+    sort: sortOrder
     fields:
       - { name: sortOrder, label: Sort Order, type: number }
       - { name: date, label: Date, type: string }
@@ -63,3 +39,13 @@ content:
       - { name: instagram, label: Instagram, type: string }
       - { name: youtube, label: YouTube, type: string }
       - { name: tiktok, label: TikTok, type: string }
+  - name: certificates
+    label: Certificates
+    type: collection
+    path: src/content/certificates.json
+    fields: 
+      - { name: title, label: Title, type: string }
+      - { name: issuer, label: Issuer, type: string }
+      - { name: url, label: Url, type: string }
+      - { name: year, label: Year, type: number }
+      - { name: image, label: Image, type: string }

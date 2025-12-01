@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type TouchEvent } from "react";
 import { openModal } from "../stores/modalStore";
 
 type ImageGalleryProps = {
@@ -8,6 +8,11 @@ type ImageGalleryProps = {
 
 export default function ImageGallery({ images, altText }: ImageGalleryProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    const minSwipeDistance = 50;
 
     if (!images || images.length === 0) {
         return (
@@ -44,6 +49,31 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
         );
     };
 
+    const onTouchStart = (e: TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNext();
+        }
+
+        if (isRightSwipe) {
+            handlePrevious();
+        }
+    };
+
     return (
         <div className="flex items-center gap-2 select-none relative">
             <button
@@ -55,8 +85,11 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
             </button>
 
             <div
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
                 onClick={handleOpenModal}
-                className="w-full max-w-3xl rounded-lg overflow-hidden shadow-2xl bg-black/80 backdrop-blur-sm relative cursor-pointer"
+                className="w-full max-w-3xl rounded-lg overflow-hidden shadow-2xl bg-black/80 backdrop-blur-sm relative cursor-pointer touch-pan-y"
             >
                 <img
                     src={images[currentIndex]}

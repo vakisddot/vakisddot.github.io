@@ -66,7 +66,10 @@ const works = (await getCollection("works"))
 
 	<footer class="flex flex-col items-center text-center gap-4">
 		<p>Credits for the background go to <a class="highlight text-orange-300" href="https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set">@CraftPix</a></p>
-		<p><span class="highlight">&copy; {currYear} Vakis Interactive.</span> All rights reserved.</p>
+		<div id="copyright" class="flex flex-col md:flex-row">
+			<p class="highlight">&copy; {currYear} Vakis Interactive.</p>
+			<p>All rights reserved.</p>
+		</div>
 	</footer>
 </main>
 </Layout>
