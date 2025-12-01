@@ -49,4 +49,4 @@ content:
       - { name: issuer, label: Issuer, type: string }
       - { name: url, label: Url, type: string }
       - { name: year, label: Year, type: number }
-      - { name: image, label: Image, type: string }
+      - { name: image, label: Image, type: image, path: images/certificates }
