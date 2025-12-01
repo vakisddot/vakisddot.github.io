@@ -12,8 +12,8 @@ content:
     - { name: title, label: Title, type: string, required: true }
     - { name: slug, label: Slug, type: string, required: true }
     - { name: description, label: Description, type: string, required: true }
-    - { name: thumbnail, label: Thumbnail, type: string, required: true }
-    - { name: images, label: Images, type: string, list: true }
+    - { name: thumbnail, label: Thumbnail, type: image, required: true }
+    - { name: images, label: Images, type: string, list: true, path: images/works }
     - { name: icon, label: Icon, type: string }
     - { name: url, label: Url, type: string }
     - { name: github, label: Github, type: string }
@@ -41,7 +41,7 @@ content:
       - { name: tiktok, label: TikTok, type: string }
   - name: certificates
     label: Certificates
-    type: collection
+    type: file
     path: src/content/certificates.json
     fields: 
       - { name: title, label: Title, type: string }

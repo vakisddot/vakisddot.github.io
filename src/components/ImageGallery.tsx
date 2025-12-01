@@ -87,14 +87,15 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
     };
 
     return (
-        <div className="relative w-full max-w-3xl mx-auto group select-none">
-            <button
-                onClick={handlePrevious}
-                className="absolute z-20 left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
-                aria-label="Previous image"
-            >
-                <i className="ph ph-arrow-left"></i>
-            </button>
+        <div className="flex items-center gap-2 select-none relative">
+            {images.length > 1 && (
+                <button
+                    onClick={handlePrevious}
+                    className="btn-round absolute z-10 left-4"
+                >
+                    <i className="ph ph-arrow-left"></i>
+                </button>
+            )}
 
             <div
                 className="overflow-hidden rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm relative cursor-pointer touch-pan-y"
@@ -121,20 +122,19 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
                     ))}
                 </div>
 
-                {/* Counter Badge */}
                 <div className="absolute bottom-2 right-2 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded">
                     {currentIndex + 1} / {images.length}
                 </div>
             </div>
 
-            {/* Right Button */}
-            <button
-                onClick={handleNext}
-                className="absolute z-20 right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
-                aria-label="Next image"
-            >
-                <i className="ph ph-arrow-right"></i>
-            </button>
+            {images.length > 1 && (
+                <button
+                    onClick={handleNext}
+                    className="btn-round absolute z-10 right-4"
+                >
+                    <i className="ph ph-arrow-right"></i>
+                </button>
+            )}
         </div>
     );
 }
