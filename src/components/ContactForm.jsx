@@ -5,10 +5,6 @@ export default function ContactForm() {
     const [result, setResult] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const onHCaptchaChange = (token) => {
-        setValue("h-captcha-response", token);
-    };
-
     const accessKey = "e88a7154-0937-4a84-bfab-b23b549ebccf";
     
     const handleSubmit = async (e) => {
@@ -95,10 +91,9 @@ export default function ContactForm() {
 
                 <HCaptcha
                     sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                    reCaptchaCompat={true}
+                    reCaptchaCompat={false}
                     theme="dark"
                     size="normal"
-                    onVerify={onHCaptchaChange}
                 />
 
                 <button type="submit" className="btn" disabled={isSubmitting}>
