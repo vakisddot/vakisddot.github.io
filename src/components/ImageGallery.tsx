@@ -98,11 +98,12 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
             )}
 
             <div
-                className="overflow-hidden rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm relative cursor-pointer touch-pan-y"
+                className="overflow-hidden rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm relative cursor-pointer"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
                 onClick={handleImageClick}
+                style={{ touchAction: "pan-y" }}
             >
                 <div
                     className="flex transition-transform duration-500 ease-out h-full"
@@ -110,6 +111,7 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
                 >
                     {images.map((img, index) => (
                         <img
+                            key={index}
                             src={img}
                             alt={
                                 altText
@@ -117,6 +119,10 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
                                     : `Gallery Image ${index + 1}`
                             }
                             className="w-full aspect-video object-contain"
+                            style={{
+                                userSelect: "none",
+                                WebkitUserSelect: "none",
+                            }}
                             draggable={false}
                         />
                     ))}
