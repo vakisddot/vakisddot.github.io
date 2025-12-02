@@ -110,21 +110,22 @@ export default function ImageGallery({ images, altText }: ImageGalleryProps) {
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {images.map((img, index) => (
-                        <img
-                            key={index}
-                            src={img}
-                            alt={
-                                altText
-                                    ? `${altText} ${index + 1}`
-                                    : `Gallery Image ${index + 1}`
-                            }
-                            className="w-full aspect-video object-contain"
-                            style={{
-                                userSelect: "none",
-                                WebkitUserSelect: "none",
-                            }}
-                            draggable={false}
-                        />
+                        <div key={index} className="shrink-0 w-full overflow-hidden">
+                            <img
+                                src={img}
+                                alt={
+                                    altText
+                                        ? `${altText} ${index + 1}`
+                                        : `Gallery Image ${index + 1}`
+                                }
+                                className="w-full aspect-video object-contain"
+                                style={{
+                                    userSelect: "none",
+                                    WebkitUserSelect: "none",
+                                }}
+                                draggable={false}
+                            />
+                        </div>
                     ))}
                 </div>
 
