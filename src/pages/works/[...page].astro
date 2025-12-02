@@ -8,7 +8,7 @@ export async function getStaticPaths({ paginate }: any) {
   
   works = works.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 
-  return paginate(works, { pageSize: 6 });
+  return paginate(works, { pageSize: 9 });
 }
 
 const { page }: any = Astro.props;
