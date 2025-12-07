@@ -13,18 +13,18 @@ images:
 github: https://github.com/vakisddot/BuffMeUp
 featured: false
 ---
-This was my “first step” into the full-stack world, and it was also my final project for Softuni!
+This was my “first step” into the **full-stack** world, and it was also my **final project** for **Softuni**!
 
-Made all the way back in 2023, BuffMeUp tried to copy MyFitnessPal, but with additional functionality for tracking workouts
+Made all the way back in 2023, _BuffMeUp_ tried to copy _MyFitnessPal_, but with additional functionality for tracking workouts
 
-This was my first time ever making a fully functional web app with a separate front end, backend and database. And I don’t even think that I knew about Tailwind yet lol
+This was my first time ever making a fully functional **web app** with a separate **front end**, **backend** and **database**. And I don’t even think that I knew about Tailwind yet lol
 
 ## Technologies used:
 
-*   React
+*   **React**
     
-*   [ASP.NET](http://ASP.NET) Core
+*   **ASP.NET Core**
     
-*   Entity Framework Core
+*   **Entity Framework Core**
     
-*   SQL Server
+*   **SQL Server**
