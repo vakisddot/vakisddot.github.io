@@ -11,14 +11,14 @@ icon: /images/works/cinnamon-buns/icon.png
 url: https://cinnamonbunsbg.onrender.com/
 featured: false
 ---
-The design is made in collaboration with my friend Forgeh. It’s a simple home page.
+The design is made in collaboration with my friend [Forgeh](http://instagram.com/forgehdesign). It’s a simple home page.
 
-It was initially supposed to be a demo for a real cinnamon place.
+It was initially supposed to be a demo for a real Bulgarian cinnamon place.
 
 ## Technologies used:
 
-*   Astro
+*   **Astro**
     
-*   React (components)
+*   **React** (components)
     
-*   Tailwind
+*   **Tailwind**
