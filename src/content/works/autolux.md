@@ -19,7 +19,7 @@ featured: true
 ---
 Yet another **Astro static site**, this time made as a course project for my university.
 
-I didn’t have to go this hard for a simple course project (we were supposed to just use plain html btw), but I just really wanted to experiment more with Astro.
+I didn’t have to go this hard for a simple course project (we were supposed to just use plain html btw), but I just really wanted to experiment more with **Astro**.
 
 It also has a “_3D_” page that is just a **Three.js** scene and some car models. Still, it makes it stand out more imo ;)
 
