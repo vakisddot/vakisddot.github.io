@@ -4,6 +4,7 @@ title: Space Shooter
 slug: space-shooter
 description: A multiplayer space game made with Raylib
 thumbnail: /images/works/space-shooter/thumb.png
+github: https://github.com/vakisddot/space-shooter
 featured: true
 ---
 This is a very rough space-shooter game that was made entirely with the purpose of experimentation.
